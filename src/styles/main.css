@@ -1,0 +1,205 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f5f6fa;
+  color: #1e1e1e;
+}
+
+.container {
+  max-width: 500px;
+  height: 100%;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Header Tabs */
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tab-header button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #aaa;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab-header button.active {
+  color: #000;
+  border-color: #000;
+}
+
+/* Task Filters */
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.filters button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #999;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+}
+
+.filters button.active {
+  background-color: #e5efff;
+  color: #1475ff;
+  font-weight: 600;
+}
+
+/* Task Input */
+input[type="text"] {
+  width: calc(100% - 90px);
+  padding: 0.75rem 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f7f9fc;
+  font-size: 0.95rem;
+  color: #000;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: #e8f0ff;
+  color: #1475ff;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #d5e7ff;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: 0.3s;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Task Item */
+li span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+li span.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.todo-item {
+  display: flex;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Task Meta */
+.task-meta {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* Checkbox + Button row */
+li input[type="checkbox"] {
+  margin-right: 0.75rem;
+  transform: scale(1.2);
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.task-actions button {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.task-actions button:hover {
+  color: #333;
+}
+
+/* New Task Button */
+.new-task {
+  background-color: #e8f0ff;
+  color: #1475ff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.new-task:hover {
+  background-color: #d5e7ff;
+}
+
+.filter {
+  display: flex;
+  gap: 12px;
+}
