@@ -21,7 +21,7 @@ const App = () => {
       >
         <h1>Task List</h1>
         <Button
-          style={{ marginLeft: 'auto' }}
+          style={{ marginLeft: 'auto', fontWeight: '600' }}
           variant="contained"
           onClick={() => setIsModalOpen(true)}
         >
