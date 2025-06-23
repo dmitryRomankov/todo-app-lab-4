@@ -46,6 +46,14 @@ class TaskStore {
     this.tasks = this.tasks.filter((t) => t.id !== id);
     this.notify();
   }
+
+  edit(id: string, newTitle: string) {
+    const task = this.tasks.find((t) => t.id === id);
+    if (task) {
+      task.title = newTitle;
+      this.notify();
+    }
+  }
 }
 
 export const taskStore = TaskStore.getInstance();

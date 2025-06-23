@@ -96,17 +96,16 @@ export const TaskList: FC<TaskListProps> = ({
     );
   };
 
+  const handleEdit = (task: Task, newTitle: string) => {
+    const oldTitle = task.title;
+    commandManager.execute(
+      () => taskStore.edit(task.id, newTitle),
+      () => taskStore.edit(task.id, oldTitle)
+    );
+  };
+
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '1rem',
-        }}
-      ></div>
-
       <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
         <Tooltip title="Undo action">
           <IconButton onClick={() => commandManager.undo()} aria-label="undo">
@@ -127,6 +126,7 @@ export const TaskList: FC<TaskListProps> = ({
             task={task}
             onToggle={() => handleToggle(task)}
             onRemove={() => handleRemove(task)}
+            onEdit={(newTitle) => handleEdit(task, newTitle)}
           />
         ))}
       </ul>
