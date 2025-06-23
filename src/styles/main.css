@@ -26,7 +26,6 @@ body {
 h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
 /* Header Tabs */
@@ -59,38 +58,6 @@ h1 {
   align-items: center;
   font-size: 0.875rem;
   color: #999;
-}
-
-.filters button {
-  background: none;
-  border: none;
-  font-weight: 500;
-  color: #999;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 20px;
-}
-
-.filters button.active {
-  background-color: #e5efff;
-  color: #1475ff;
-  font-weight: 600;
-}
-
-
-button {
-  padding: 0.75rem 1rem;
-  border: none;
-  background-color: #e8f0ff;
-  color: #1475ff;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background-color: #d5e7ff;
 }
 
 /* Task List */
@@ -172,25 +139,4 @@ li input[type="checkbox"] {
 
 .task-actions button:hover {
   color: #333;
-}
-
-/* New Task Button */
-.new-task {
-  background-color: #e8f0ff;
-  color: #1475ff;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  font-weight: 600;
-  border: none;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-
-.new-task:hover {
-  background-color: #d5e7ff;
-}
-
-.filter {
-  display: flex;
-  gap: 12px;
 }

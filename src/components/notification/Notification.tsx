@@ -27,8 +27,9 @@ export const NotificationManager = () => {
   };
 
   useEffect(() => {
-    const handleAdd = () => addNotification('Todo added successfully', 'add');
-    const handleRemove = () => addNotification('Todo removed', 'remove');
+    const handleAdd = () => addNotification('Task added successfully', 'add');
+    const handleRemove = () =>
+      addNotification('Task has been removed', 'remove');
 
     window.addEventListener('task-added', handleAdd);
     window.addEventListener('task-removed', handleRemove);

@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useState, type FC } from 'react';
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import Undo from '@mui/icons-material/Undo';
+import Redo from '@mui/icons-material/Redo';
 import type { Task } from '../models/Task';
 import { taskStore } from '../core/TaskStore';
 import { TodoItem } from './TodoItem';
@@ -105,8 +108,16 @@ export const TodoList: FC<TodoListProps> = ({
       ></div>
 
       <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-        <Button onClick={() => commandManager.undo()}>Undo</Button>
-        <Button onClick={() => commandManager.redo()}>Redo</Button>
+        <Tooltip title="Undo action">
+          <IconButton onClick={() => commandManager.undo()} aria-label="undo">
+            <Undo />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Redo action">
+          <IconButton onClick={() => commandManager.redo()} aria-label="redo">
+            <Redo />
+          </IconButton>
+        </Tooltip>
       </div>
 
       <ul>
