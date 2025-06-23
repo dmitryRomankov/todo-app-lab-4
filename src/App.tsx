@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { TodoList } from './components/TodoList';
+import { TaskList } from './components/TaskList';
 import { Filter } from './components/Filter';
 import { Notification } from './components/notification/Notification';
 
@@ -19,7 +19,7 @@ const App = () => {
           marginBottom: '20px',
         }}
       >
-        <h1>Todo List</h1>
+        <h1>Task List</h1>
         <Button
           style={{ marginLeft: 'auto' }}
           variant="contained"
@@ -30,7 +30,7 @@ const App = () => {
       </div>
 
       <Filter />
-      <TodoList isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <TaskList isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       <Notification />
     </div>
   );

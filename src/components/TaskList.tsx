@@ -5,7 +5,7 @@ import Undo from '@mui/icons-material/Undo';
 import Redo from '@mui/icons-material/Redo';
 import type { Task } from '../models/Task';
 import { taskStore } from '../core/TaskStore';
-import { TodoItem } from './TodoItem';
+import { TaskItem } from './TaskItem';
 import { TaskFactory } from '../core/TaskFactory';
 import {
   AllStrategy,
@@ -16,12 +16,12 @@ import {
 import { commandManager } from '../core/commands/CommandManager';
 import { Modal } from './modal/Modal';
 
-type TodoListProps = {
+type TaskListProps = {
   isModalOpen: boolean;
   setIsModalOpen: (isOpen: boolean) => void;
 };
 
-export const TodoList: FC<TodoListProps> = ({
+export const TaskList: FC<TaskListProps> = ({
   isModalOpen,
   setIsModalOpen,
 }) => {
@@ -122,7 +122,7 @@ export const TodoList: FC<TodoListProps> = ({
 
       <ul>
         {tasks.map((task) => (
-          <TodoItem
+          <TaskItem
             key={task.id}
             task={task}
             onToggle={() => handleToggle(task)}

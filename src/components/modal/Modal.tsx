@@ -29,7 +29,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, onAdd }) => {
   return (
     <div className="modal-backdrop">
       <div className="modal-content">
-        <h2>Add New Todo</h2>
+        <h2>Add New Task</h2>
         <TextField
           variant="outlined"
           type="text"

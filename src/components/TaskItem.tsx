@@ -6,13 +6,13 @@ import Tooltip from '@mui/material/Tooltip';
 
 import type { Task } from '../models/Task';
 
-interface TodoItemProps {
+interface TaskItemProps {
   task: Task;
   onToggle: () => void;
   onRemove: () => void;
 }
 
-export const TodoItem: FC<TodoItemProps> = ({ task, onRemove, onToggle }) => {
+export const TaskItem: FC<TaskItemProps> = ({ task, onRemove, onToggle }) => {
   return (
     <li className="todo-item">
       <div className="action-buttons">
