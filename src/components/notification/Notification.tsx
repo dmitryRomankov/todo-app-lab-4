@@ -18,7 +18,7 @@ export const NotificationManager = () => {
 
     setNotifications((prev) => {
       const next = [...prev, notification];
-      return next.slice(-3); // max 3
+      return next.slice(-3);
     });
 
     setTimeout(() => {
