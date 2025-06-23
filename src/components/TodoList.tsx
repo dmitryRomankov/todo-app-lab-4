@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type FC } from 'react';
+import Button from '@mui/material/Button';
 import type { Task } from '../models/Task';
 import { taskStore } from '../core/TaskStore';
 import { TodoItem } from './TodoItem';
@@ -12,10 +13,17 @@ import {
 import { commandManager } from '../core/commands/CommandManager';
 import { Modal } from './modal/Modal';
 
-export const TodoList = () => {
+type TodoListProps = {
+  isModalOpen: boolean;
+  setIsModalOpen: (isOpen: boolean) => void;
+};
+
+export const TodoList: FC<TodoListProps> = ({
+  isModalOpen,
+  setIsModalOpen,
+}) => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [filter, setFilter] = useState<FilterStrategy>(new AllStrategy());
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const updateTasks = useCallback(() => {
     const allTasks = taskStore.getTasks();
@@ -94,14 +102,11 @@ export const TodoList = () => {
           alignItems: 'center',
           marginBottom: '1rem',
         }}
-      >
-        <h1>Todo List</h1>
-        <button onClick={() => setIsModalOpen(true)}>+ Add</button>
-      </div>
+      ></div>
 
       <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-        <button onClick={() => commandManager.undo()}>Undo</button>
-        <button onClick={() => commandManager.redo()}>Redo</button>
+        <Button onClick={() => commandManager.undo()}>Undo</Button>
+        <Button onClick={() => commandManager.redo()}>Redo</Button>
       </div>
 
       <ul>

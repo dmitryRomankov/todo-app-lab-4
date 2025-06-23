@@ -12,6 +12,9 @@
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   background: white;
   padding: 2rem;
   border-radius: 16px;
@@ -24,39 +27,17 @@
   margin-bottom: 1rem;
 }
 
-.modal-content input {
+/* .modal-content input {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-bottom: 1.25rem;
-}
+} */
 
 .modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-}
-
-.modal-actions button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.modal-actions button:first-child {
-  background-color: #eee;
-}
-
-.modal-actions button:last-child {
-  background-color: #1475ff;
-  color: white;
-}
-
-.modal-actions button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
