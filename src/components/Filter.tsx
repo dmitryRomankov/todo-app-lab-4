@@ -1,12 +1,19 @@
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 export const Filter = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
   const setFilter = (type: string) => {
     const event = new CustomEvent('setFilter', { detail: type });
     window.dispatchEvent(event);
+    setActiveFilter(type);
   };
+
+  const isAll = activeFilter === 'all';
+  const isActive = activeFilter === 'active';
+  const isCompleted = activeFilter === 'completed';
 
   return (
     <Box
@@ -20,13 +27,25 @@ export const Filter = () => {
       }}
     >
       <ButtonGroup size="large" aria-label="Large button group">
-        <Button key="all" onClick={() => setFilter('all')}>
+        <Button
+          variant={isAll ? 'contained' : 'outlined'}
+          key="all"
+          onClick={() => setFilter('all')}
+        >
           All
         </Button>
-        <Button key="active" onClick={() => setFilter('active')}>
+        <Button
+          variant={isActive ? 'contained' : 'outlined'}
+          key="active"
+          onClick={() => setFilter('active')}
+        >
           Active
         </Button>
-        <Button key="completed" onClick={() => setFilter('completed')}>
+        <Button
+          variant={isCompleted ? 'contained' : 'outlined'}
+          key="completed"
+          onClick={() => setFilter('completed')}
+        >
           Completed
         </Button>
       </ButtonGroup>

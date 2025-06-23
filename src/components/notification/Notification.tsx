@@ -23,7 +23,7 @@ export const NotificationManager = () => {
 
     setTimeout(() => {
       setNotifications((prev) => prev.filter((n) => n.id !== id));
-    }, 2000);
+    }, 3000);
   };
 
   useEffect(() => {
