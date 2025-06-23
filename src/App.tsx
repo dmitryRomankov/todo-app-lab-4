@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { TodoList } from './components/TodoList';
 import { Filter } from './components/Filter';
-import { NotificationManager } from './components/notification/Notification';
+import { Notification } from './components/notification/Notification';
 
 import './styles/main.css';
 import { useState } from 'react';
@@ -31,7 +31,7 @@ const App = () => {
 
       <Filter />
       <TodoList isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      <NotificationManager />
+      <Notification />
     </div>
   );
 };

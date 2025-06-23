@@ -9,7 +9,7 @@ interface Notification {
   type: NotificationType;
 }
 
-export const NotificationManager = () => {
+export const Notification = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   const addNotification = (message: string, type: NotificationType) => {
